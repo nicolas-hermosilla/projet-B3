@@ -1,0 +1,25 @@
+services:
+  docker_mon:
+    image: philhawthorne/ha-dockermon
+    container_name: ha_dockermon
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - homeassistant-net
+    ports:
+      - '8126:8126'
+    restart: unless-stopped
+  
+  homeassistant:
+    image: philhawthorne/ha-dockermon
+    container_name: homeassistant
+    image: homeassistant/home-assistant:stable
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /var/lib/docker/custom_components/configuration.yaml:/var/lib/docker/custom_components/configuration.yaml
+      - /etc/localtime:/etc/localtime:ro
+    networks:
+      - homeassistant-net
+    ports:
+      - '8123:8123'
+    restart: unless-stopped

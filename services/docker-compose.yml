@@ -1,0 +1,84 @@
+##############################
+#########SERVICES#############
+##############################
+
+services:
+  prometheus:     
+    extends:
+      file: monitoring.yml
+      service: prometheus
+
+
+  cadvisor:
+    extends:
+      file: monitoring.yml
+      service: cadvisor
+
+  grafana:
+    extends:
+      file: monitoring.yml
+      service: grafana
+
+  docker_mon:
+    extends:
+      file: homeassistant.yml
+      service: docker_mon
+
+  homeassistant:
+    extends:
+      file: homeassistant.yml
+      service: homeassistant
+
+  registry-web:
+    extends:
+      file: registry.yml
+      service: registry-web
+    depends_on:
+      - registry-srv
+
+  registry-srv:
+    extends: 
+      file: registry.yml
+      service: registry-srv
+
+##############################
+##########VOLUMES############# 
+############################## 
+
+volumes:
+  prometheus_data:          
+    external: true
+  grafana-storage:
+    external: true
+  registry_data:
+    external: true
+
+##############################
+##########NETWORK#############
+##############################
+
+networks:
+  homeassistant-net:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: "172.28.20.0/24"
+          gateway: "172.28.20.1"
+         
+  monitoring-net:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: "172.28.30.0/24"
+          gateway: "172.28.30.1"
+
+  registry-net:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: "172.28.40.0/24"
+          gateway: "172.28.40.1"
+
