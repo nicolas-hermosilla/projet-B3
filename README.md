@@ -1,4 +1,3 @@
-# Readme.md
 <p align="center">  
   <img width="380" height="300" src="https://fredericfaure.files.wordpress.com/2014/02/logo_docker.png?w=676">
 </p>
