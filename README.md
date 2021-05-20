@@ -116,7 +116,7 @@ Lancer le script **run.sh** situé dans le dossier administration.
 Depuis la console, récupérer le mot de passe administrateur de Jenkins avec la commande   
 `docker logs jenkins`  
   
-Accéder à Jenkins depuis l'addresse `0.0.0.0:8082` et y insérer le mot de passe.  
+Accéder à Jenkins depuis l'adresse `0.0.0.0:8082` et y insérer le mot de passe.  
   
 #### Installer les plugins Docker et Blue Ocean :  
 Administrer Jenkins &#8594; Gestion des plugins &#8594; Disponible  
