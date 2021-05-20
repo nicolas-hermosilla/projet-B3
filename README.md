@@ -2,7 +2,7 @@
   <img width="380" height="300" src="https://fredericfaure.files.wordpress.com/2014/02/logo_docker.png?w=676">
 </p>
 <h1 align="center">
-  Infrastructure as a Code et Conteneurisation
+  Infrastructure as Code et Conteneurisation
 </h1>
 <br>
   
@@ -22,7 +22,7 @@
 <br>
 
 # Introduction
-Bienvenue sur le projet d'Infrastructure as a Code et Conteneurisation.  
+Bienvenue sur le projet d'Infrastructure as Code et Conteneurisation.  
 Le but de ce projet est de déployer une infrastructure de services en quelques commandes.  
 
 ### Liste des services
