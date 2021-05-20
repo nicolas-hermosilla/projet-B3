@@ -37,12 +37,11 @@ Le but de ce projet est de déployer une infrastructure de services en quelques 
 - [Docker](https://www.docker.com/)
 - [Docker-compose](https://docs.docker.com/compose/)
 - [Docker Hub](https://hub.docker.com/)
-- [GitHub](https://github.com/)
-  
+- [GitHub](https://github.com/)  
+<br> 
   
 # Déploiement du projet
-  
-  
+
 ## Pré-requis 
   
 #### Outil de virtualisation
@@ -84,8 +83,8 @@ Déplacer les fichiers du repo vers votre repo et faites votre premier push.
 `git add .`  
 `git commit -m "my-first-commit"`  
 `git push`  
-
-
+<br>
+  
 ## Adapter la configuration de votre serveur pour le déploiement de l'infrastructure
 
 ### Exécution du script d'installation de **docker** et **docker-compose**
@@ -93,8 +92,20 @@ Déplacer les fichiers du repo vers votre repo et faites votre premier push.
 Après avoir récupérer les données, allez dans le repository de votre serveur et retrouvez le script **install-docker.sh**.  
 Donnez les droits d'exécution à ce fichier et lancer le script pour installer docker et docker-compose.  
 `chmod u+x install-docker.sh`  
-`./install-docker.sh`
+`./install-docker.sh`  
+<br>
+    
+## Création des différents volumes
 
+A la racine de votre repo, donner les droits d'éxecution :  
+`chmod u+x create_volume.sh`  
+  
+Lancer le script `./create_volume.sh`
+  
+Ce script va créer les différents volumes associés aux services respectifs.  
+Il va également déplacer le fichier de configuration de prometheus dans le volume de prometheus et ce fichier sera pris en compte lors du déploiement du service.  
+<br>
+  
 ## Mise en place du déploiement continu
   
 ### Configuration de Jenkins
@@ -138,6 +149,19 @@ Après chaque modification de repo, vous pouvez visualiser sur Jenkins les logs 
 Sur Jenkins, accéder directement à Blue ocean en connectant à votre Git.  
 Créer votre webhook dans les paramètres de votre repo sur GitHub en insérant l'ip publique de votre serveur (exemple: https://192.168.5.128:8082/github-webhook/)  
 Cette configuration notifiera directement Jenkins dès lors qu'une modification sera faite par l'intérmédiaire de ce webhook et scannera automatiquement le repos.  
+<br>  
+ 
+## Monitoring
 
+- Une fois que l'infrastructure est déployée sur votre serveur, accéder à Grafana depuis l'url https:0.0.0.0:3000.
+- Authentifiez-vous (user:admin password:admin)
+- Aller dans **Configuration/Data Sources** et ajouter une nouvelle Data Source prometheus.
 
+Renseigner les paramètres suivants :
+- URL : http://prometheus:9090
+- Skip TLS Verify
 
+Tester ensuite la datasource en sauvegadant les paramètres.
+
+- Accéder à **Dashboard/Manage** et importer le dashboard en renseignant l'ID 193 [source](https://grafana.com/grafana/dashboards/193)
+- Sélectionner la datasource **Prometheus**
