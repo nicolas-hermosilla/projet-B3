@@ -45,10 +45,10 @@ Le but de ce projet est de déployer une infrastructure de services en quelques 
 ## Pré-requis 
   
 #### Outil de virtualisation
-Afin de mettre en place l'infrastructure, installez un outil de virtualisation (VMWare/Virtual box).  
+Afin de mettre en place l'infrastructure, installer un outil de virtualisation (VMWare/Virtual box).  
 
 #### Image Ubuntu
-Préparez une **machine virtuelle [Ubuntu](https://ubuntu.com/download/desktop/thank-you?version=20.04.2.0&architecture=amd64)** de préférence en **Desktop** avec une configuration minimale : 
+Préparer une **machine virtuelle [Ubuntu](https://ubuntu.com/download/desktop/thank-you?version=20.04.2.0&architecture=amd64)** de préférence en **Desktop** avec une configuration minimale : 
 | RAM | Cœurs | Disk  | Network  | 
 | :---|:-----:| ------: | ------:|
 | 4GB | 4     | 100GB | NAT (DHCP) |
@@ -63,9 +63,9 @@ Préparez une **machine virtuelle [Ubuntu](https://ubuntu.com/download/desktop/t
 
 ### Configuration de l'authentification sur GitHub
 
-Après avoir lancé la commande `ssh-keygen`, allez dans le dossier `.ssh` et récupérez la clé **id_rsa.pub**.  
-Sur GitHub, accédez à l'onglet de [création d'un nouveau clé ssh](https://github.com/settings/ssh/new) et ajoutez la clé publique.
-Ensuite lancez les commandes suivantes en renseignant les informations respectives :
+Après avoir lancé la commande `ssh-keygen`, aller dans le dossier `.ssh` et récupérez la clé **id_rsa.pub**.  
+Sur GitHub, accéder à l'onglet de [création d'un nouveau clé ssh](https://github.com/settings/ssh/new) et ajouter la clé publique.
+Ensuite lancer les commandes suivantes en renseignant les informations respectives :
 
 `git config --global user.name "github_pseudo"`  
 `git config --global user.email "github_email"`  
@@ -73,7 +73,7 @@ Ensuite lancez les commandes suivantes en renseignant les informations respectiv
 Cette étape vous permettra de faire des actions sur votre repository sans avoir à vous authentifier à chaque action.  
 Elle vous évitera également de renseigner votre mot de passe en clair, ce qui pourrait constituer un problème de sécurité.
 
-Clonez ensuite votre projet sur votre serveur avec la commande suivante : 
+Cloner ensuite votre projet sur votre serveur avec la commande suivante : 
 
 `git clone git@github.com:nicolas-hermosilla/projet-B3.git`
 
@@ -89,8 +89,8 @@ Déplacer les fichiers du repo vers votre repo et faites votre premier push.
 
 ### Exécution du script d'installation de **docker** et **docker-compose**
 
-Après avoir récupérer les données, allez dans le repository de votre serveur et retrouvez le script **install-docker.sh**.  
-Donnez les droits d'exécution à ce fichier et lancer le script pour installer docker et docker-compose.  
+Après avoir récupérer les données, aller dans le repository de votre serveur et retrouver le script **install-docker.sh**.  
+Donner les droits d'exécution à ce fichier et lancer le script pour installer docker et docker-compose.  
 `chmod u+x install-docker.sh`  
 `./install-docker.sh`  
 <br>
