@@ -130,7 +130,7 @@ Sélectionner l'environnement à administrer, ici **Docker**.
 Depuis la console, récupérer le mot de passe administrateur de Jenkins avec la commande   
 `docker logs jenkins`  
   
-Accéder à Jenkins depuis l'adresse `0.0.0.0:8082` et y insérer le mot de passe.  
+Accéder à Jenkins depuis l'adresse `@IP_serveur:8082` et y insérer le mot de passe.  
 
 Installer ensuite les plugins suggérés.  
 
@@ -173,7 +173,7 @@ Cette configuration notifiera directement Jenkins dès lors qu'une modification 
  
 ## Monitoring
 
-- Une fois que l'infrastructure est déployée sur votre serveur, accéder à Grafana depuis l'url https:0.0.0.0:3000.
+- Une fois que l'infrastructure est déployée sur votre serveur, accéder à Grafana depuis l'url https:@IP_serveur:3000.
 - Authentifiez-vous (user:admin password:admin)
 - Aller dans **Configuration/Data Sources** et ajouter une nouvelle Data Source prometheus.
 
