@@ -118,7 +118,7 @@ Ce script va nous permettre de lancer 2 services :
 
 Une fois le script exécuté, lancer la commande `docker ps` et vérifier que les 2 services sont bien en **UP**.  
 
-Accéder à Portainer avec l'URL suivant http://@IP_serveur:9000 (lancer la commande `ip a` pour récuprérer l'adresse IP).  
+Accéder à Portainer avec l'URL suivant `http://@IP_serveur:9000` (lancer la commande `ip a` pour récuprérer l'adresse IP).  
 Créer un compte administrateur.    
 Sélectionner l'environnement à administrer, ici **Docker**.  
 <br>
