@@ -173,7 +173,7 @@ Cette configuration notifiera directement Jenkins dès lors qu'une modification 
  
 ## Monitoring
 
-- Une fois que l'infrastructure est déployée sur votre serveur, accéder à Grafana depuis l'url https:@IP_serveur:3000.
+- Une fois que l'infrastructure est déployée sur votre serveur, accéder à Grafana depuis l'URL `http:@IP_serveur:3000`.
 - Authentifiez-vous (user:admin password:admin)
 - Aller dans **Configuration/Data Sources** et ajouter une nouvelle Data Source prometheus.
 
@@ -185,3 +185,19 @@ Tester ensuite la datasource en sauvegadant les paramètres.
 
 - Accéder à **Dashboard/Manage** et importer le dashboard en renseignant l'ID 193 [source](https://grafana.com/grafana/dashboards/193)
 - Sélectionner la datasource **Prometheus**
+
+## Centraliser la gestion des images
+
+Pour pousser une image dans le registry :
+
+Exécuter la commande **docker tag**  
+***Exemple :*** `docker tag grafana/grafana localhost:5000/img-grafana`
+
+Exécuter ensuite la commande **push** pour envoyer les images vers votre registry :  
+***Exemple :*** `docker push localhost:5000/img-grafana`
+
+Accéder à l'interface Regsitry depuis `http:@IP_serveur:8081`
+
+Pour récupérer des images :
+Exécuter la commande **pull**  
+***Exemple :*** `docker pull localhost:5000/img-grafana`
