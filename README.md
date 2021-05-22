@@ -106,12 +106,26 @@ Ce script va créer les différents volumes associés aux services respectifs.
 Il va également déplacer le fichier de configuration de prometheus dans le volume de prometheus et ce fichier sera pris en compte lors du déploiement du service.  
 <br>
   
+## Administration 
+
+### Configuration de Portainer  
+
+Lancer le script **admin.sh** situé dans le dossier administration.  
+`./admin.sh`  
+Ce script va nous permettre de lancer 2 services :
+- Portainer
+- Jenkins  
+
+Une fois le script exécuté, lancer la commande `docker ps` et vérifier que les 2 services sont bien en **UP**.  
+
+Accéder à Portainer avec l'URL suivant http://@IP_serveur:9000 (lancer la commande `ip a` pour récuprérer l'adresse IP).  
+Créer un compte administrateur.    
+Sélectionner l'environnement à administrer, ici **Docker**.  
+<br>
+
 ## Mise en place du déploiement continu
   
 ### Configuration de Jenkins
-
-Lancer le script **run.sh** situé dans le dossier administration.  
-`./run.sh`  
   
 Depuis la console, récupérer le mot de passe administrateur de Jenkins avec la commande   
 `docker logs jenkins`  
@@ -120,7 +134,7 @@ Accéder à Jenkins depuis l'adresse `0.0.0.0:8082` et y insérer le mot de pass
 
 Installer ensuite les plugins suggérés.  
 
-Créer un compte admin/admin/admin/admin/admin@local.  
+Créer un compte administrateur : admin/admin/admin/admin/admin@local.  
 
 Enfin, laisser l'adresse du serveur par défaut.  
   
