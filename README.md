@@ -143,7 +143,7 @@ Administrer Jenkins &#8594; Gestion des plugins &#8594; Disponible
   
 #### Configurer Docker sur Jenkins :  
 - Depuis Administrer Jenkins &#8594; Configurer le système, aller tout en bas de la page sur **separate configuration page**  
-- Sélectionner Docker et Docker Cloud détails pour y insérer l'URL `unix:///var/run/docker.sock`   
+- Sélectionner Docker et Docker Cloud détails pour y insérer l'URI `unix:///var/run/docker.sock`   
 - Séléctionner **Enabled** et tester la connexion.  
 - Sauvegarder les modifications.  
   
@@ -154,7 +154,7 @@ Administrer Jenkins &#8594; Docker
   
 - Sur Jenkins, sélectionner **nouvel item**  
 - Nommer votre projet et séléctionner **projet free-style**  
-- Sélectionner **Gthub project** et insérer l'url de votre repo.  
+- Sélectionner **Gthub project** et insérer l'URL de votre repo.  
 - **Gestion du code source** : Séléctionner Git et insérer l'URL du repo.  
 - **Branch to build** : Ne pas spécifier de branche spécifique.  
 - **Ce qui déclenche le build** : Sélectionner **Scrutation de l'outil de gestion de version** et mettre * * * * * pour une vérification du repo chaque minute.  
